@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'your-docker-image:latest'
-        CONTAINER_NAME = 'your-container-name'
+        DOCKER_IMAGE = 'final:latest'
+        CONTAINER_NAME = 'container'
     }
 
     stages {
@@ -32,13 +32,24 @@ pipeline {
         }
 
         stage('Deploy Docker Container') {
-            steps {
-                script {
-                    docker.run("-p 8080:80 --name ${env.CONTAINER_NAME} -d ${env.DOCKER_IMAGE}")
-                }
+    steps {
+        script {
+            def containerStatus = sh(script: "docker ps -q --filter name=${env.CONTAINER_NAME}", returnStatus: true).trim()
+
+            if (containerStatus.isEmpty()) {
+                echo "Container is not running. Starting a new container..."
+                docker.run("-p 8080:80 --name ${env.CONTAINER_NAME} -d ${env.DOCKER_IMAGE}")
+            } else {
+                echo "Stopping and removing the existing container..."
+                sh "docker stop ${env.CONTAINER_NAME}"
+                sh "docker rm ${env.CONTAINER_NAME}"
+
+                echo "Starting a new container with the latest image..."
+                docker.run("-p 8080:80 --name ${env.CONTAINER_NAME} -d ${env.DOCKER_IMAGE}")
             }
         }
     }
+}
 
     post {
         success {
