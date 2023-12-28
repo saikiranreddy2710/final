@@ -23,9 +23,8 @@ pipeline {
             steps {
                 script {
                     sshagent(['${env.SSH_CREDENTIALS_ID}']) {
-                        // Use SSH credentials to run commands on the remote server
-                        //sh "ssh user@${env.REMOTE_HOST} 'echo "connected"'"
-                        echo "connected"
+                        
+                        sh "ssh user@${env.REMOTE_HOST} 'echo "connected"'"
                     }
                 }
             }
@@ -34,9 +33,9 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    // dir("RecommendationEngine_Movies_Docker_Kubernetes") {
-                    //    sh "docker build -t ${env.DOCKER_IMAGE_NAME} ."
-                    echo "build succeded"
+                     dir("RecommendationEngine_Movies_Docker_Kubernetes") {
+                       sh "docker build -t ${env.DOCKER_IMAGE_NAME} ."
+                 
                     }
                 }
             }
