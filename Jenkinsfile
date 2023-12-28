@@ -36,7 +36,7 @@ pipeline {
                 script {
                      //dir("RecommendationEngine_Movies_Docker_Kubernetes") {
                        //sh "docker build -t ${env.DOCKER_IMAGE_NAME} ."
-                    echo "build succeded"
+                    echo "build succesded"
                  
                     }
                 }
