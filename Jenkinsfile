@@ -24,8 +24,8 @@ pipeline {
                 script {
                     sshagent(['${env.SSH_CREDENTIALS_ID}']) {
                         
-                        //sh "ssh user@${env.REMOTE_HOST} 'echo "connected"'"
-                        echo "Connection failed"
+                        sh "ssh user@${env.REMOTE_HOST} 'echo "connected"'"
+                        
                     }
                 }
             }
@@ -34,9 +34,9 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                     //dir("RecommendationEngine_Movies_Docker_Kubernetes") {
-                       //sh "docker build -t ${env.DOCKER_IMAGE_NAME} ."
-                    echo "build succesded"
+                     dir("RecommendationEngine_Movies_Docker_Kubernetes") {
+                       sh "docker build -t ${env.DOCKER_IMAGE_NAME} ."
+        
                  
                     }
                 }
