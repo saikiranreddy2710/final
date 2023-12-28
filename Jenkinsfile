@@ -33,7 +33,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    dir("RecommendationEngine_Movies_Docker-Kubernetes") {
+                    dir("RecommendationEngine_Movies_Docker_Kubernetes") {
                         sh "docker build -t ${env.DOCKER_IMAGE_NAME} ."
                     }
                 }
