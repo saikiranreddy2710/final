@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
 
@@ -9,6 +8,8 @@ pipeline {
         DOCKER_IMAGE_NAME = 'final'
         DOCKER_IMAGE_TAG = 'latest'
         CONTAINER_NAME = 'remote'
+        K8S_NAMESPACE = 'your-namespace'
+        K8S_DEPLOYMENT_NAME = 'your-deployment'
     }
 
     stages {
@@ -68,9 +69,15 @@ pipeline {
                 }
             }
         }
-    }
 
-    
+        stage('Deploy to Kubernetes') {
+            steps {
+                script {
+                    sh "kubectl apply -f your-kubernetes-manifest.yaml -n ${env.K8S_NAMESPACE}"
+                }
+            }
+        }
+    }
 
     post {
         success {
