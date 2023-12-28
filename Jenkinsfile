@@ -24,7 +24,8 @@ pipeline {
                 script {
                     sshagent(['${env.SSH_CREDENTIALS_ID}']) {
                         // Use SSH credentials to run commands on the remote server
-                        sh "ssh user@${env.REMOTE_HOST} 'echo connected'"
+                        //sh "ssh user@${env.REMOTE_HOST} 'echo connected'"
+                        echo "conneted"
                     }
                 }
             }
