@@ -23,10 +23,3 @@ Steps to run application-
 6. browse ipadderess:5000 to access the application 
 
 
-![image](https://user-images.githubusercontent.com/16138757/109556454-79b00e00-7a9c-11eb-93d4-34b25c1d1992.png)
-
-![image](https://user-images.githubusercontent.com/16138757/109556553-93e9ec00-7a9c-11eb-8251-9fcc238e7da0.png)
-
-![image](https://user-images.githubusercontent.com/16138757/109556589-a106db00-7a9c-11eb-80b2-7401f262d98d.png)
-
-![image](https://user-images.githubusercontent.com/16138757/109556654-b8de5f00-7a9c-11eb-8a3f-cdcb918442bb.png)
