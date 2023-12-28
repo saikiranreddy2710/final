@@ -25,7 +25,7 @@ pipeline {
                     sshagent(['${env.SSH_CREDENTIALS_ID}']) {
                         
                         //sh "ssh user@${env.REMOTE_HOST} 'echo "connected"'"
-                        echo "Connected"
+                        echo "Connection failed"
                     }
                 }
             }
