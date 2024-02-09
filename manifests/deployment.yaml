@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: my-app
-        image: your-registry/your-image-name:latest
+        image: saikiran27/final:latest
         ports:
         - containerPort: 5000
