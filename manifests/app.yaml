@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/your-org/your-repo.git
+    repoURL: https://github.com/saikiranreddy2710/final.git
     targetRevision: HEAD
-    path: app-manifests 
+    path: /manifests/
   destination:
     server: https://kubernetes.default.svc
     namespace: default 
