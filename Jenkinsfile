@@ -23,7 +23,7 @@ pipeline {
                 //sshagent(['${env.SSH_CREDENTIALS_ID}']) {
                      //sh "ssh -o StrictHostKeyChecking=no user@98.70.25.254 
                 echo 'connected' 
-                }
+                
             }
         }
 
@@ -32,7 +32,7 @@ pipeline {
                 //dir("RecommendationEngine_Movies_Docker_Kubernetes") {
                     //sh "docker build -t ${env.DOCKER_IMAGE_NAME}:${env.BUILD_NUMBER} ."  
                     echo 'docker build success'
-                }
+                
             }
         }
 
@@ -57,8 +57,8 @@ pipeline {
                          //   docker run -d -p 8081:5000 --name ${env.CONTAINER_NAME} ${env.DOCKER_IMAGE_NAME}:${env.BUILD_NUMBER}
                        // '''
                     echo 'deploy to remote server'
-                    }
-                }
+                    
+                
             }
         }
 
@@ -67,7 +67,7 @@ pipeline {
                 //dir("RecommendationEngine_Movies_Docker_Kubernetes") { 
                     //sh "kubectl apply -f your-kubernetes-manifest.yaml -n ${env.K8S_NAMESPACE}" 
                 echo 'kubernetes deploy success'
-                }
+                
             }
         }
     }
