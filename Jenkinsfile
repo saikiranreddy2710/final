@@ -36,8 +36,10 @@ pipeline {
 
         stage('Push Docker Image') {
             steps {
-                docker.withRegistry('https://hub.docker.com/r/saikiran27/final', 'saikiran27') {
-                    docker.image("${env.DOCKER_IMAGE_NAME}:${env.BUILD_NUMBER}").push()
+                script{   
+                    docker.withRegistry('https://hub.docker.com/r/saikiran27/final', 'saikiran27') {
+                        docker.image("${env.DOCKER_IMAGE_NAME}:${env.BUILD_NUMBER}").push()
+                    }
                 }
             }
         }
