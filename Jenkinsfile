@@ -38,12 +38,12 @@ pipeline {
 
         stage('Push Docker Image') {
             steps {
-                script{   
-                    docker.withRegistry('https://hub.docker.com/r/saikiran27/final', 'saikiran27') {
+               // script{   
+                   // docker.withRegistry('https://hub.docker.com/r/saikiran27/final', 'saikiran27') {
                         //docker.image("${env.DOCKER_IMAGE_NAME}:${env.BUILD_NUMBER}").push()
                         echo 'docker push success'
-                    }
-                }
+                    
+                
             }
         }
 
