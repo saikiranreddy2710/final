@@ -21,7 +21,7 @@ pipeline {
         stage('Connect to Remote Server') {
             steps {
                 sshagent(['${env.SSH_CREDENTIALS_ID}']) {
-                    sh "ssh user@${env.REMOTE_HOST} 'echo \"connected\"'" 
+                     sh "ssh -o StrictHostKeyChecking=no user@98.70.25.254 echo \"connected\"" 
                 }
             }
         }
