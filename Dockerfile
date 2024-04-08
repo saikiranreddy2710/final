@@ -1,6 +1,6 @@
 FROM continuumio/anaconda3:4.4.0
 COPY . /usr/app
-EXPOSE 5000
+EXPOSE 8081
 WORKDIR /usr/app
 RUN pip install --upgrade pip
 RUN rm -rf /opt/conda/lib/python3.6/site-packages/numpy 
