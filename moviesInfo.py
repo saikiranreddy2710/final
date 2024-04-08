@@ -2,7 +2,7 @@ from tmdbv3api import TMDb,Movie
 import json
 import requests
 tmdb = TMDb()
-tmdb.api_key = 'api_key'
+tmdb.api_key = '87f37bd86f3f93c22461b32dbd628f38'
 class MovieInfo:
     def __init__(self):
         self.tmdbObj= Movie()
